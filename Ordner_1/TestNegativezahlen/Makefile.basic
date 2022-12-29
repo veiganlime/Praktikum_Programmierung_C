@@ -1,0 +1,30 @@
+
+PROGRAM = c_nz
+
+SOURCES.c = c_nz.c
+SOURCES.h = 
+
+SOURCES = \
+	$(SOURCES.h)\
+	$(SOURCES.c)
+
+OBJECTS = \
+	  $(SOURCES.c:%.c%=%.o)
+
+CC = gcc
+
+CFLAGS = -O0 -Wall
+LDFLAGS =
+LDLIBS = -lm
+
+all:		$(PROGRAM)
+objects:	$(SOURCES.c) $(OBJECTS)
+sources:	$(SOURCES)
+	
+$(PROGRAM): $(SOURCES.c) $(OBJECTS)
+	$(LINK.c) -o $@ $(OBJECTS) $(LDLIBS)
+
+clean:
+	rm -rf $(PROGRAM)
+run:
+	./$(PROGRAM)

@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+void Ausgabe(int *arr)
+{
+	printf("Groesse von Array(in Funktion ausgabe): %d \n", sizeof(arr));
+}
+
+int main()
+{
+	int arr[10];
+	int Groesse;
+	int i;
+
+	Groesse = sizeof(arr);
+
+	Ausgabe(&arr[10]);
+	Ausgabe(a[]);
+	Ausgabe(*a);
+
+
+	printf("Groesse von Array: %d \n", Groesse);
+
+	for(i=0; i<10; i++)
+	{
+		arr[i] = i + 1;
+		printf("Array: %d \n", arr[i]);
+	}
+	printf("Groesse von Array: %d \n", sizeof(arr));
+
+	return(0);
+}
